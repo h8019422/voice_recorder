@@ -21,6 +21,7 @@ pip install -r requirements.txt
 Now that you have all the requirements, you should be able to just run the script either by using an IDE or by CMD with the following command (as long as you're in the voice_recorder folder path):
 ```python voice_recorder.py```
 
+#### Notice
 PyAudio is not supported by Python versoin newer than v.3.13
 so Use PyAudioWPatch is the easiest for Python 3.15
 
@@ -30,7 +31,7 @@ PyAudioWPatch is a maintained drop-in replacement for PyAudio on Windows that pr
 pip install PyAudioWPatch
 ```
  in your .venv terminal.
- 
+
 • Update your import line. Change your import statement in your Python script to 
 ```
 import pyaudiowpatch as pyaudio
