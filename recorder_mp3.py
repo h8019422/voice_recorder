@@ -9,9 +9,9 @@ class App:
     def __init__(self, master):
         self.is_recording = False
         self.filename = "output.mp3"
-        self.record_button = tk.Button(master, text="Start Recording", command=self.start_recording)
+        self.record_button = tk.Button(master, text="以mp3格式開始錄音", command=self.start_recording)
         self.record_button.pack()
-        self.stop_button = tk.Button(master, text="Stop Recording", command=self.stop_recording, state="disabled")
+        self.stop_button = tk.Button(master, text="停止錄音(存放.\\audio_files\\output.mp3)", command=self.stop_recording, state="disabled")
         self.stop_button.pack()
 
     def create_output_directory(self):
@@ -80,5 +80,6 @@ class App:
 
 root = tk.Tk()
 root.geometry("300x100")
+root.title("MP3 Voice Recorder")
 app = App(root)
 root.mainloop()
