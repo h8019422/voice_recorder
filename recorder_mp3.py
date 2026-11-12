@@ -9,7 +9,7 @@ class App:
     def __init__(self, master):
         self.is_recording = False
         self.filename = "output.mp3"
-        self.record_button = tk.Button(master, text="以mp3格式開始錄音", command=self.start_recording)
+        self.record_button = tk.Button(master, text="開始錄音", command=self.start_recording)
         self.record_button.pack()
         self.stop_button = tk.Button(master, text="停止錄音(存放.\\audio_files\\output.mp3)", command=self.stop_recording, state="disabled")
         self.stop_button.pack()
@@ -79,7 +79,7 @@ class App:
         threading.Thread(target=_record).start()
 
 root = tk.Tk()
-root.geometry("300x100")
-root.title("MP3 Voice Recorder")
+root.geometry("400x100")
+root.title("錄音小程式(MP3格式)")
 app = App(root)
 root.mainloop()

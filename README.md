@@ -39,8 +39,14 @@ import pyaudiowpatch as pyaudio
 All your existing pyaudio.PyAudio() and stream code will work without changes.
 
 ### to create exe
+activate .env
+```
+.\.venv\Scripts\Activate.ps1 
+```
+
 ```
 python -m PyInstaller --clean --onefile --icon=.\recorder.ico --noconsole --name="recorder_mp3.exe" "recorder_mp3.py" 
+python -m PyInstaller --clean --onefile --noconsole --name="recorder_mp3.exe" "recorder_mp3.py"
 ```
 確認環境無誤後，建議加上清除快取的參數來重新編譯，避免舊的打包紀錄干擾。
 • 執行打包指令。 輸入 python -m PyInstaller --onefile --clean recorder_mp3.py（使用 python -m PyInstaller 可以 100% 確保呼叫的是目前 .venv 內的 PyInstaller）。
