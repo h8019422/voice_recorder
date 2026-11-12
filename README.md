@@ -1,5 +1,5 @@
 # voice_recorder
-Simple voice recorder that uses your default microphone to record audio and output it to a folder called ```audio_files```
+Simple voice recorder that uses your default microphone to record MP3 audio and output it to a folder called ```audio_files```
 
 ## How to use it
 #### EXE
