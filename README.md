@@ -1,5 +1,7 @@
 # voice_recorder
+
 Simple voice recorder that uses your default microphone to record MP3 audio and output it to a folder called ```audio_files```
+
 
 ## How to use it
 #### EXE
@@ -22,8 +24,9 @@ Now that you have all the requirements, you should be able to just run the scrip
 ```python voice_recorder.py```
 
 #### Notice
-PyAudio is not supported by Python versoin newer than v.3.13
-so Use PyAudioWPatch is the easiest for Python 3.15
+- PyAudio is not supported by Python versoin newer than v.3.13, so Use PyAudioWPatch is the easiest for Python 3.15
+- 2026/11/13 中文化
+- 2026/11/12 .env 重建
 
 PyAudioWPatch is a maintained drop-in replacement for PyAudio on Windows that provides pre-built wheels for Python 3.15 out of the box. It includes all standard PyAudio functions plus support for recording system audio (WASAPI loopback).
 • Install the package. Run 
@@ -49,8 +52,8 @@ python -m PyInstaller --clean --onefile --icon=.\recorder.ico --noconsole --name
 python -m PyInstaller --clean --onefile --noconsole --name="recorder_mp3.exe" "recorder_mp3.py"
 ```
 確認環境無誤後，建議加上清除快取的參數來重新編譯，避免舊的打包紀錄干擾。
-• 執行打包指令。 輸入 python -m PyInstaller --onefile --clean recorder_mp3.py（使用 python -m PyInstaller 可以 100% 確保呼叫的是目前 .venv 內的 PyInstaller）。
-• 強制收集隱藏模組（若仍報錯）。 如果執行新生成的 .exe 依然提示找不到 pyaudio，請改用 python -m PyInstaller --onefile --clean --collect-all pyaudio recorder_mp3.py 強制將所有相關檔案封裝進去。
+• 執行打包指令。 輸入 `python -m PyInstaller --onefile --clean recorder_mp3.py`（使用 python -m PyInstaller 可以 100% 確保呼叫的是目前 .venv 內的 PyInstaller）。
+• 強制收集隱藏模組（若仍報錯）。 如果執行新生成的 .exe 依然提示找不到 pyaudio，請改用 `python -m PyInstaller --onefile --clean --collect-all pyaudio recorder_mp3.py` 強制將所有相關檔案封裝進去。
 
 Python 的 python -m 指令對大小寫非常敏感，因此 Pyinstaller（小寫 i）會找不到模組。
 • 執行正確指令。 注意 PyInstaller 的 P 與 I 皆為大寫：

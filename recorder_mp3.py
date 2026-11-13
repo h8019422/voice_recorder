@@ -1,4 +1,5 @@
 import tkinter as tk
+from turtle import left
 #  import pyaudiowpatch as pyaudio
 import pyaudio
 import lameenc
@@ -9,10 +10,14 @@ class App:
     def __init__(self, master):
         self.is_recording = False
         self.filename = "output.mp3"
-        self.record_button = tk.Button(master, text="開始錄音", command=self.start_recording)
-        self.record_button.pack()
-        self.stop_button = tk.Button(master, text="停止錄音(存放.\\audio_files\\output.mp3)", command=self.stop_recording, state="disabled")
-        self.stop_button.pack()
+        self.record_button = tk.Button(master, text="開始錄音", font=("Microsoft YaHei", 14), bg="lightgreen", command=self.start_recording)
+        self.record_button.pack(padx=10, pady=10)
+        self.stop_button = tk.Button(master, text="停止錄音", font=("Microsoft YaHei", 14), bg="yellow", command=self.stop_recording, state="disabled")
+        self.stop_button.pack(padx=10, pady=10)
+        self.label = tk.Label(master, text="提醒:\n1.錄音文件將保存在.\\audio_files\\output.mp3" \
+        "\n2.若錄音文件已存在,將自動生成唯一文件名,如output_1.mp3,output_2.mp3等 " \
+        "\n3.此程式為mp3格式錄音器", font=("Microsoft YaHei", 10), justify="left") 
+        self.label.pack(padx=10, pady=10, anchor="w")
 
     def create_output_directory(self):
         directory = "audio_files"
@@ -79,7 +84,8 @@ class App:
         threading.Thread(target=_record).start()
 
 root = tk.Tk()
-root.geometry("400x100")
-root.title("錄音小程式(MP3格式)")
+root.iconbitmap(os.path.join(os.path.dirname(os.path.abspath(__file__)), "recorder.ico"))
+#root.geometry("500x200")
+root.title("錄音小程式 v1.0")
 app = App(root)
 root.mainloop()
