@@ -4,6 +4,7 @@ import wave
 import threading
 import os
 
+# original wav version, for reference only. not used in the final implementation.
 class App:
     def __init__(self, master):
         self.is_recording = False
