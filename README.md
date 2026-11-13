@@ -48,7 +48,7 @@ activate .env
 ```
 
 ```
-python -m PyInstaller --clean --onefile --icon=.\recorder.ico --noconsole --name="recorder_mp3.exe" "recorder_mp3.py" 
+python -m PyInstaller --clean --onefile --icon=.\recorder.ico --add-data=".\recorder.ico;." --noconsole --name="recorder_mp3.exe" "recorder_mp3.py"
 python -m PyInstaller --clean --onefile --noconsole --name="recorder_mp3.exe" "recorder_mp3.py"
 ```
 確認環境無誤後，建議加上清除快取的參數來重新編譯，避免舊的打包紀錄干擾。
